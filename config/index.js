@@ -2,10 +2,10 @@ module.exports = {
   //-- SITE SETTINGS -----
   author: "DzunN86",
   siteTitle: "Dzun Nurroin",
-  siteShortTitle: "Dzun", // Used as logo text in header, footer, and splash screen
+  siteShortTitle: "Dzun.", // Used as logo text in header, footer, and splash screen
   siteDescription:
     "Personal landing page 👋🏻",
-  siteUrl: "https://gatsby-starter-portfolio-minimal.netlify.app/",
+  siteUrl: "https://dzun-tech-git-master.dzunn86.vercel.app/",
   siteLanguage: "en_US",
   siteIcon: "content/favicon.png", // Relative to gatsby-config file
   seoTitleSuffix: "Portfolio Minimal", // SEO title syntax will be e.g. "Imprint - {seoTitleSuffix}"
@@ -65,7 +65,7 @@ module.exports = {
     {
       name: "Github",
       url:
-        "https://github.com/konstantinmuenster/gatsby-starter-portfolio-minimal",
+        "https://github.com/DzunN86",
     },
     {
       name: "Behance",
