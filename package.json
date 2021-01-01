@@ -61,10 +61,9 @@
   },
   "keywords": [
     "gatsby",
-    "starter",
     "mdx",
     "PWA",
-    "netlify",
+    "vercel",
     "portfolio",
     "minimal",
     "animations",
