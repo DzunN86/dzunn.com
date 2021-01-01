@@ -17,7 +17,7 @@ describe("IndexPage", () => {
   })
 
   it("is animated", () => {
-    cy.wait(2000) // wait for animation
+    cy.wait(2000) // wait for animation // Diley Animasi
     cy.findByTestId("animated-heading").should("have.css", "opacity", "1")
   })
 
