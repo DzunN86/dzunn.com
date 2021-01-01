@@ -59,8 +59,8 @@ module.exports = {
       url: "https://www.linkedin.com/in/dzun-nn/",
     },
     {
-      name: "Dev.to",
-      url: "https://konstantinmuenster.medium.com/",
+      name: "Medium",
+      url: "https://dzun.medium.com/",
     },
     {
       name: "Github",
@@ -69,7 +69,7 @@ module.exports = {
     },
     {
       name: "Behance",
-      url: "https://www.behance.net/konstanmnster",
+      url: "https://www.behance.net/dzunnurroin",
     },
   ],
 
