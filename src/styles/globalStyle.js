@@ -10,6 +10,30 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
 
+    body::-webkit-scrollbar {
+        width: 0.5rem;
+      }
+    
+      html {
+        scroll-behavior: smooth;
+        scrollbar-width: thin;
+        scrollbar-color: #5651B7;
+      }
+    
+      body::-webkit-scrollbar-track {
+        background: #121212;
+      }
+    
+      body::-webkit-scrollbar-thumb {
+        background-color: #5651B7 ;
+        border-radius: .5rem;
+        background: #FDC830;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #F37335, #FDC830);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #F37335, #FDC830); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        border: 1px solid rgba(86,81,183,.5);
+      }
+    
+
     html {
         width: 100%;
         height: 100%;
