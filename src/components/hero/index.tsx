@@ -50,14 +50,8 @@ const Hero = () => {
           </Heading>
         </Stack>
         <Text lineHeight="175%" textAlign={{base:"center", md:"start"}} fontSize="lg">
-          I’m a full-stack engineer, a designer, and a content creator. I work
-          at <ExternalLink href="https://codechem.com">CodeChem</ExternalLink>{" "}
-          as a <strong>developer/designer</strong>, and I’m a{" "}
-          <strong>core member</strong> at{" "}
-          <ExternalLink href="https://chakra-ui.com">Chakra UI</ExternalLink>,
-          contributing as a <strong>Developer Advocate</strong>. I’m also an{" "}
-          <ExternalLink href="https://egghead.io">egghead.io</ExternalLink>{" "}
-          <strong>instructor</strong>.
+          I’m Frontend Engineer and UI/UX design enthusiast, <ExternalLink href="https://commitdev-id.vercel.app/">Commit Dev</ExternalLink> 
+          <strong>core organizer</strong>.
         </Text>
         <Grid gap={{ base: 3, lg: 6 }}
                 templateColumns={{
