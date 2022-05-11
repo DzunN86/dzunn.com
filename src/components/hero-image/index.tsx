@@ -1,7 +1,7 @@
 import { Box, AspectRatio, Text, HStack, Flex } from "@chakra-ui/react";
 import Image from "next/image";
 
-import MyImage from "src/packages/avatar-small.jpg";
+import MyImage from "src/packages/medium-avatar.jpg";
 
 import StatusIndicator from "../status-indicator";
 
