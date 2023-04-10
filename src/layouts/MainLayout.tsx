@@ -1,3 +1,4 @@
+import PageTransition from "@/components/PageTransition";
 import {
   Box,
   Button,
@@ -150,7 +151,7 @@ export default function MainLayout({ children }: Props) {
             alignItems="stretch"
             as="main"
           >
-            {children}
+            <PageTransition>{children}</PageTransition>
           </VStack>
         </VStack>
       </Container>

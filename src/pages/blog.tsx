@@ -1,10 +1,10 @@
 import PageTransition from "@/components/PageTransition";
 import MainLayout from "@/layouts/MainLayout";
 
-export default function about() {
+export default function Blog() {
   return (
     <MainLayout>
-      <h1>About</h1>
+      <h1>Blog</h1>
     </MainLayout>
   );
 }

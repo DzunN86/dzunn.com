@@ -1,18 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
+import PageTransition from "@/components/PageTransition";
 import MainLayout from "@/layouts/MainLayout";
-import {
-  Box,
-  Button,
-  Container,
-  HStack,
-  Heading,
-  Image,
-  VStack,
-  useColorMode,
-  LinkProps,
-} from "@chakra-ui/react";
-import NextLink from "next/link";
-import { useRouter } from "next/router";
+import { Heading } from "@chakra-ui/react";
 export default function Home() {
   return (
     <MainLayout>
