@@ -1,12 +1,9 @@
-import PageTransition from '@/components/PageTransition'
-import type { NextPage } from 'next'
+import MainLayout from "@/layouts/MainLayout";
 
-const About: NextPage = () => {
+export default function about() {
   return (
-    <PageTransition>
+    <MainLayout>
       <h1>About</h1>
-    </PageTransition>
-  )
+    </MainLayout>
+  );
 }
-
-export default About

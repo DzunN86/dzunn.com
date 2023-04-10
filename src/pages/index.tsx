@@ -1,13 +1,24 @@
-import Hero from "@/components/hero";
-import PageTransition from "@/components/PageTransition";
-import type { NextPage } from "next";
-
-const Home: NextPage = () => {
+/* eslint-disable react/no-unescaped-entities */
+import MainLayout from "@/layouts/MainLayout";
+import {
+  Box,
+  Button,
+  Container,
+  HStack,
+  Heading,
+  Image,
+  VStack,
+  useColorMode,
+  LinkProps,
+} from "@chakra-ui/react";
+import NextLink from "next/link";
+import { useRouter } from "next/router";
+export default function Home() {
   return (
-    <PageTransition>
-      <Hero />
-    </PageTransition>
+    <MainLayout>
+      <Heading as="h1" size="2xl">
+        Hey, I'm Dzun!
+      </Heading>
+    </MainLayout>
   );
-};
-
-export default Home;
+}
