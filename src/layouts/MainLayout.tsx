@@ -88,7 +88,7 @@ export default function MainLayout({ children }: Props) {
                       <Image
                         src="/logo.svg"
                         alt="Dzun Nurroin"
-                        boxSize="4rem"
+                        boxSize="3.5rem"
                       />
                     ) : (
                       <Image
