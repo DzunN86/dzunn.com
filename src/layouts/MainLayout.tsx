@@ -17,7 +17,7 @@ export default function MainLayout({ children }: Props) {
         <VStack flex={1} alignItems="stretch" w="full">
           <Navbar />
           <VStack
-            pt="5rem"
+            pt={{ base: "2rem", md: "5rem" }}
             spacing={16}
             w="full"
             alignItems="stretch"
