@@ -1,16 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import MainLayout from "@/layouts/MainLayout";
 import { getAllFilesFrontMatter } from "@/libs/mdx";
-import formatDate from "@/libs/utils/formatDate";
-import {
-  Box,
-  Divider,
-  Grid,
-  GridItem,
-  Heading,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Grid, GridItem, Heading, Text } from "@chakra-ui/react";
 import Image from "next/image";
 
 export async function getStaticProps() {
@@ -31,9 +22,9 @@ export default function Home({ posts }: any) {
             Likes Cats 😸 but doesn't hate 🐼
             <br />
             <br />
-            I'm a software developer in Chicago. I make open-source projects and
-            write about code, design, and life. I like accordions, drawing,
-            sci-fi, reading, and gaming.
+            I'm a software developer specialized in Frontend Development. I love
+            to build things that live on the internet, whether that be websites,
+            applications, or anything in between.
           </Text>
         </GridItem>
         <GridItem colSpan={{ base: 12, md: 5 }}>
