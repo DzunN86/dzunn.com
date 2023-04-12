@@ -1,7 +1,15 @@
 /* eslint-disable react/no-unescaped-entities */
 import MainLayout from "@/layouts/MainLayout";
 import { getAllFilesFrontMatter } from "@/libs/mdx";
-import { Box, Grid, GridItem, Heading, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Grid,
+  GridItem,
+  Heading,
+  Text,
+  useColorMode,
+} from "@chakra-ui/react";
+import Head from "next/head";
 import Image from "next/image";
 
 export async function getStaticProps() {
@@ -11,8 +19,14 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts }: any) {
+  const { colorMode, toggleColorMode } = useColorMode();
+  const favicons = colorMode === "light" ? "logo.svg" : "logo-light.svg" || "";
   return (
     <MainLayout>
+      <Head>
+        <title>Dzun Nurroin</title>
+        <link rel="shortcut icon" href={favicons} type="image/x-icon" />
+      </Head>
       <Grid templateColumns="repeat(12, 1fr)" gap={6} alignItems="center">
         <GridItem colSpan={{ base: 12, md: 7 }}>
           <Heading as="h1" size="2xl">
