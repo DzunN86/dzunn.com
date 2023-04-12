@@ -1,0 +1,118 @@
+import {
+  Box,
+  HStack,
+  Heading,
+  Image,
+  Show,
+  VStack,
+  useColorMode,
+} from "@chakra-ui/react";
+import NextImage from "next/image";
+import NextLink from "next/link";
+import NavLink from "./NavLink";
+
+const links = [
+  { href: "/about", label: "About" },
+  { href: "/blog", label: "Blog" },
+  { href: "/projects", label: "Projects" },
+];
+
+export default function Navbar() {
+  const { colorMode, toggleColorMode } = useColorMode();
+  return (
+    <Box
+      as="header"
+      borderBottom={{
+        base: "1px solid",
+        md: "none",
+      }}
+      borderColor={colorMode === "light" ? "gray.200" : "gray.700"}
+      pt={{
+        base: "1rem",
+        md: "2rem",
+      }}
+      pb="1rem"
+      position={{
+        base: "sticky",
+        md: "relative",
+      }}
+      top="0"
+      bg={{
+        base: colorMode === "light" ? "white" : "gray.900",
+        md: "transparent",
+      }}
+    >
+      <HStack
+        spacing={4}
+        alignItems="center"
+        justifyContent="space-between"
+        px={{ base: "1rem", md: "2rem" }}
+      >
+        <VStack spacing={{ base: 0, md: 4 }} alignItems="flex-start">
+          <Box display={{ base: "none", md: "block" }}>
+            <NextLink href="/" passHref>
+              <HStack spacing={4} alignItems="center">
+                {colorMode === "light" ? (
+                  <Image src="/logo.svg" alt="Dzun Nurroin" boxSize="3rem" />
+                ) : (
+                  <Image
+                    src="/logo-light.svg"
+                    alt="Dzun Nurroin"
+                    boxSize="3rem"
+                  />
+                )}
+                <Heading as="h1" size="md" mb="0">
+                  Dzun Nurroin
+                </Heading>
+              </HStack>
+            </NextLink>
+          </Box>
+          <HStack
+            spacing={{
+              base: "1rem",
+              md: "2rem",
+            }}
+            alignItems="flex-start"
+            as="nav"
+          >
+            <Show below="md">
+              <NavLink href="/">Home</NavLink>
+            </Show>
+            {links.map((link) => (
+              <NavLink key={link.href} href={link.href}>
+                {link.label}
+              </NavLink>
+            ))}
+          </HStack>
+        </VStack>
+        <Box
+          as="button"
+          rounded="full"
+          w={{ base: "2rem", md: "2.5rem" }}
+          h={{ base: "2rem", md: "2.5rem" }}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          onClick={toggleColorMode}
+          border="1px solid"
+          borderColor={colorMode === "light" ? "gray.200" : "gray.700"}
+          bg={colorMode === "light" ? "white" : "gray.900"}
+          _hover={{
+            bg: colorMode === "light" ? "gray.100" : "gray.700",
+          }}
+        >
+          <NextImage
+            src={
+              colorMode === "light"
+                ? "/static/icons/half-moon.png"
+                : "/static/icons/sun.png"
+            }
+            alt="moon"
+            width={20}
+            height={20}
+          />
+        </Box>
+      </HStack>
+    </Box>
+  );
+}
