@@ -10,6 +10,7 @@ import {
 import NextImage from "next/image";
 import NextLink from "next/link";
 import NavLink from "./NavLink";
+import { getBlurDataURL } from "@/libs/blurDataURL";
 
 const links = [
   { href: "/about", label: "About" },
@@ -48,19 +49,19 @@ export default function Navbar() {
         justifyContent="space-between"
         px={{ base: "1rem", md: "2rem" }}
       >
-        <VStack spacing={{ base: 0, md: 4 }} alignItems="flex-start">
+        <VStack spacing={{ base: 0, md: 5 }} alignItems="flex-start">
           <Box display={{ base: "none", md: "block" }}>
             <NextLink href="/" passHref>
               <HStack spacing={4} alignItems="center">
-                {colorMode === "light" ? (
-                  <Image src="/logo.svg" alt="Dzun Nurroin" boxSize="3rem" />
-                ) : (
-                  <Image
-                    src="/logo-light.svg"
-                    alt="Dzun Nurroin"
-                    boxSize="3rem"
-                  />
-                )}
+                <NextImage
+                  src={colorMode === "light" ? "/logo.svg" : "/logo-light.svg"}
+                  alt="Dzun Nurroin"
+                  placeholder="blur"
+                  blurDataURL={getBlurDataURL(700, 475)}
+                  width={50}
+                  height={50}
+                  style={{ width: "3.5rem", height: "auto" }}
+                />
                 <Heading as="h1" size="md" mb="0">
                   Dzun Nurroin
                 </Heading>
