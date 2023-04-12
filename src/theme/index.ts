@@ -1,5 +1,10 @@
-import { extendTheme } from "@chakra-ui/react";
+import { ThemeConfig, extendTheme } from "@chakra-ui/react";
 import { globalStyles } from "./styles";
 import { headingStyles } from "./components/heading";
 
-export default extendTheme(globalStyles, headingStyles);
+const config: ThemeConfig = {
+  initialColorMode: "dark",
+  useSystemColorMode: false,
+};
+
+export default extendTheme({ config }, globalStyles, headingStyles);
