@@ -13,6 +13,7 @@ export default function MainLayout({ children }: Props) {
         maxW={{ base: "container.sm", md: "container.lg" }}
         minH="100vh"
         px="0"
+        position="relative"
       >
         <VStack flex={1} alignItems="stretch" w="full">
           <Navbar />

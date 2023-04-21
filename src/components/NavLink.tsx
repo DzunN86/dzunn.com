@@ -6,9 +6,10 @@ interface NavLinkProps extends LinkProps {
   children?: string | React.ReactNode;
   href: string;
   _hover?: LinkProps;
+  underLine?: string;
 }
 
-function NavLink({ href, children, _hover, ...props }: LinkProps) {
+function NavLink({ href, children, _hover, bgColor, ...props }: LinkProps) {
   const router = useRouter();
   const isActive = router.pathname === href;
 
@@ -25,7 +26,7 @@ function NavLink({ href, children, _hover, ...props }: LinkProps) {
           left: 0,
           width: "100%",
           height: "2.5px",
-          backgroundColor: "orange.400",
+          backgroundColor: bgColor ? bgColor : "orange.400",
           transform: isActive ? "scaleX(1)" : "scaleX(0)",
           transformOrigin: "left",
           transition: "transform 0.2s ease",

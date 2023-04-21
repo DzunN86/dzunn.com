@@ -11,15 +11,44 @@ import NextImage from "next/image";
 import NextLink from "next/link";
 import NavLink from "./NavLink";
 import { getBlurDataURL } from "@/libs/blurDataURL";
+import useSound from "use-sound";
 
 const links = [
   { href: "/about", label: "About" },
-  { href: "/blog", label: "Blog" },
-  { href: "/projects", label: "Projects" },
+  // { href: "/blog", label: "Blog" },
+  // { href: "/projects", label: "Projects" },
+  { href: "/resume", label: "Resume" },
+  { href: "/illustration", label: "Illustration" },
 ];
 
 export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
+  const [play] = useSound(
+    colorMode === "dark"
+      ? "/static/sounds/public_sounds_switch-on.mp3"
+      : "/static/sounds/public_sounds_switch-off.mp3"
+  );
+
+  const handleToggleColorMode = () => {
+    play();
+    toggleColorMode();
+  };
+
+  const genereateColor = (idx: number) => {
+    const colors = [
+      "red",
+      "green",
+      "purple",
+      "blue",
+      "pink",
+      "twitter",
+      "orange",
+      "teal",
+      "cyan",
+      "gray",
+    ];
+    return colors[idx % colors.length] + ".400";
+  };
   return (
     <Box
       as="header"
@@ -49,7 +78,7 @@ export default function Navbar() {
         justifyContent="space-between"
         px={{ base: "1rem", md: "2rem" }}
       >
-        <VStack spacing={{ base: 0, md: 5 }} alignItems="flex-start">
+        <VStack spacing={{ base: 0, md: 6 }} alignItems="flex-start">
           <Box display={{ base: "none", md: "block" }}>
             <NextLink href="/" passHref>
               <HStack spacing={4} alignItems="center">
@@ -79,8 +108,12 @@ export default function Navbar() {
             <Show below="md">
               <NavLink href="/">Home</NavLink>
             </Show>
-            {links.map((link) => (
-              <NavLink key={link.href} href={link.href}>
+            {links.map((link, index) => (
+              <NavLink
+                key={link.href}
+                href={link.href}
+                bgColor={genereateColor(index)}
+              >
                 {link.label}
               </NavLink>
             ))}
@@ -88,16 +121,16 @@ export default function Navbar() {
         </VStack>
         <Box
           as="button"
-          rounded="full"
+          rounded="lg"
           w={{ base: "2rem", md: "2.5rem" }}
           h={{ base: "2rem", md: "2.5rem" }}
           display="flex"
           alignItems="center"
           justifyContent="center"
-          onClick={toggleColorMode}
-          border="1px solid"
+          onClick={handleToggleColorMode}
+          border="1.5px solid"
           borderColor={colorMode === "light" ? "gray.200" : "gray.700"}
-          bg={colorMode === "light" ? "white" : "gray.900"}
+          bg={colorMode === "light" ? "gray.50" : "gray.800"}
           _hover={{
             bg: colorMode === "light" ? "gray.100" : "gray.700",
           }}
@@ -109,8 +142,8 @@ export default function Navbar() {
                 : "/static/icons/sun.png"
             }
             alt="moon"
-            width={20}
-            height={20}
+            width={17}
+            height={17}
           />
         </Box>
       </HStack>

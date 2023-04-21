@@ -40,7 +40,8 @@
     "remark-gfm": "^3.0.1",
     "remark-math": "^5.1.1",
     "typescript": "5.0.4",
-    "unist-util-visit": "^4.1.2"
+    "unist-util-visit": "^4.1.2",
+    "use-sound": "^4.0.1"
   },
   "devDependencies": {
     "@types/js-yaml": "^4.0.5"
