@@ -1,26 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 import { PageSEO } from "@/components/SEO";
 import MainLayout from "@/layouts/MainLayout";
-import { getAllFilesFrontMatter } from "@/libs/mdx";
-import {
-  Box,
-  Grid,
-  GridItem,
-  Heading,
-  Text,
-  useColorMode,
-} from "@chakra-ui/react";
-import Head from "next/head";
-import Image from "next/image";
-
-export async function getStaticProps() {
-  const posts = await getAllFilesFrontMatter("blog");
-
-  return { props: { posts } };
-}
+import { Grid, GridItem, Heading, Text } from "@chakra-ui/react";
 
 export default function Home({ posts }: any) {
-  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <MainLayout>
       <PageSEO
@@ -36,9 +19,9 @@ export default function Home({ posts }: any) {
             Likes Cats 😸 but doesn't hate 🐼
           </Text>
           <Text mt="2rem" fontSize="xl">
-            I'm a software developer specialized in Frontend Development. I love
-            to build things that live on the internet, whether that be websites,
-            applications, or anything in between.
+            a software engineer specialized in Frontend Development creating web
+            based application from landing page and company profile, to internal
+            dashboard and information system.
           </Text>
         </GridItem>
         {/* <GridItem colSpan={{ base: 12, md: 4 }}>

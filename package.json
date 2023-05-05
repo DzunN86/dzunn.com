@@ -1,5 +1,5 @@
 {
-  "name": "dzunn.com",
+  "name": "dzun.com",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,41 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.5.5",
+    "@chakra-ui/react": "^2.6.0",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
-    "@types/node": "18.15.11",
-    "@types/react": "18.0.34",
-    "@types/react-dom": "18.0.11",
-    "esbuild": "^0.17.16",
-    "eslint": "8.38.0",
-    "eslint-config-next": "13.3.0",
-    "framer-motion": "^10.11.2",
-    "github-slugger": "^2.0.0",
-    "gray-matter": "^4.0.3",
-    "image-size": "^1.0.2",
-    "js-yaml": "^4.1.0",
-    "mdast-util-to-string": "^3.2.0",
-    "mdx-bundler": "^9.2.1",
-    "next": "13.3.0",
+    "@types/node": "18.16.0",
+    "@types/react": "18.2.0",
+    "@types/react-dom": "18.2.0",
+    "eslint": "8.39.0",
+    "eslint-config-next": "13.3.1",
+    "framer-motion": "^10.12.4",
+    "next": "13.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "^4.8.0",
-    "reading-time": "^1.5.0",
-    "rehype-autolink-headings": "^6.1.1",
-    "rehype-citation": "^1.0.1",
-    "rehype-katex": "^6.0.2",
-    "rehype-preset-minify": "^6.0.0",
-    "rehype-prism-plus": "^1.5.1",
-    "rehype-slug": "^5.1.0",
-    "remark-footnotes": "^4.0.1",
-    "remark-gfm": "^3.0.1",
-    "remark-math": "^5.1.1",
     "typescript": "5.0.4",
-    "unist-util-visit": "^4.1.2",
     "use-sound": "^4.0.1"
-  },
-  "devDependencies": {
-    "@types/js-yaml": "^4.0.5"
   }
 }

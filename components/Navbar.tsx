@@ -10,11 +10,11 @@ import {
 import NextImage from "next/image";
 import NextLink from "next/link";
 import NavLink from "./NavLink";
-import { getBlurDataURL } from "@/libs/blurDataURL";
 import useSound from "use-sound";
+import { getBlurDataURL } from "@/utils/blurDataURL";
 
 const links = [
-  { href: "/about", label: "About" },
+  { href: "/me", label: "About" },
   // { href: "/blog", label: "Blog" },
   // { href: "/projects", label: "Projects" },
   { href: "/resume", label: "Resume" },
@@ -71,6 +71,7 @@ export default function Navbar() {
         base: colorMode === "light" ? "white" : "gray.900",
         md: "transparent",
       }}
+      zIndex={1000}
     >
       <HStack
         spacing={4}

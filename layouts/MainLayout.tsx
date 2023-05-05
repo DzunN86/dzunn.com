@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import { Box, Container, VStack } from "@chakra-ui/react";
 import { PropsWithChildren } from "react";
-import PageTransition from "../components/PageTransition";
+import PageTransition from "@/components/PageTransition";
 
 type Props = PropsWithChildren<{}>;
 
