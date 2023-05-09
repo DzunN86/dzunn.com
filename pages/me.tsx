@@ -10,7 +10,7 @@ export default function about() {
         description="Dzun Nurroin's personal website"
       />
       <Heading as="h1" size="2xl">
-        About me
+        This page is under construction
       </Heading>
     </MainLayout>
   );

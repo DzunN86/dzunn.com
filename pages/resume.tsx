@@ -10,7 +10,7 @@ export default function Resume() {
         description="Dzun Nurroin's personal website"
       />
       <Heading as="h1" size="2xl">
-        Resume
+        This page is under construction
       </Heading>
     </MainLayout>
   );
