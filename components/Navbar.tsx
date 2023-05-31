@@ -10,7 +10,7 @@ import {
 import NextImage from "next/image";
 import NextLink from "next/link";
 import NavLink from "./NavLink";
-import useSound from "use-sound";
+// import useSound from "use-sound";
 import { getBlurDataURL } from "@/utils/blurDataURL";
 
 const links = [
@@ -23,14 +23,14 @@ const links = [
 
 export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
-  const [play] = useSound(
-    colorMode === "dark"
-      ? "/static/sounds/public_sounds_switch-on.mp3"
-      : "/static/sounds/public_sounds_switch-off.mp3"
-  );
+  // const [play] = useSound(
+  //   colorMode === "dark"
+  //     ? "/static/sounds/public_sounds_switch-on.mp3"
+  //     : "/static/sounds/public_sounds_switch-off.mp3"
+  // );
 
   const handleToggleColorMode = () => {
-    play();
+    // play();
     toggleColorMode();
   };
 
@@ -107,7 +107,9 @@ export default function Navbar() {
             as="nav"
           >
             <Show below="md">
-              <NavLink href="/">Home</NavLink>
+              <NavLink href="/" bgColor="yellow.400">
+                Home
+              </NavLink>
             </Show>
             {links.map((link, index) => (
               <NavLink
