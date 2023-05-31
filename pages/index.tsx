@@ -1,9 +1,21 @@
 /* eslint-disable react/no-unescaped-entities */
 import { PageSEO } from "@/components/SEO";
 import MainLayout from "@/layouts/MainLayout";
-import { Grid, GridItem, Heading, Text } from "@chakra-ui/react";
+import { getBlurDataURL } from "@/utils/blurDataURL";
+import NextImage from "next/image";
+import {
+  Box,
+  Grid,
+  GridItem,
+  HStack,
+  Heading,
+  Show,
+  Text,
+  useColorMode,
+} from "@chakra-ui/react";
 
 export default function Home({ posts }: any) {
+  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <MainLayout>
       <PageSEO
@@ -12,13 +24,26 @@ export default function Home({ posts }: any) {
       />
       <Grid templateColumns="repeat(12, 1fr)" gap={6} alignItems="center">
         <GridItem colSpan={{ base: 12, md: 9 }}>
-          <Heading as="h1" size="2xl">
-            Hey, I'm Dzun!
-          </Heading>
-          <Text mt="2rem" fontSize="lg" fontStyle="italic">
+          <HStack spacing={5}>
+            <Show below="md">
+              <NextImage
+                src={colorMode === "light" ? "/logo.svg" : "/logo-light.svg"}
+                alt="Dzun Nurroin"
+                placeholder="blur"
+                blurDataURL={getBlurDataURL(700, 475)}
+                width={50}
+                height={50}
+                style={{ width: "3.5rem", height: "auto" }}
+              />
+            </Show>
+            <Heading as="h1" size="2xl">
+              Hey, I'm Dzun!
+            </Heading>
+          </HStack>
+          <Text mt="1.5rem" fontSize="lg">
             Likes Cats 😸 but doesn't hate 🐼
           </Text>
-          <Text mt="2rem" fontSize="xl">
+          <Text mt="1.5rem" fontSize="xl">
             a software engineer specialized in Frontend Development creating web
             based application from landing page and company profile, to internal
             dashboard and information system.
