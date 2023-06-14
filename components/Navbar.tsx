@@ -1,12 +1,4 @@
-import {
-  Box,
-  HStack,
-  Heading,
-  Image,
-  Show,
-  VStack,
-  useColorMode,
-} from "@chakra-ui/react";
+import { Box, HStack, Heading, Image, Show, VStack, useColorMode } from "@chakra-ui/react";
 import NextImage from "next/image";
 import NextLink from "next/link";
 import NavLink from "./NavLink";
@@ -35,18 +27,7 @@ export default function Navbar() {
   };
 
   const genereateColor = (idx: number) => {
-    const colors = [
-      "red",
-      "green",
-      "purple",
-      "blue",
-      "pink",
-      "twitter",
-      "orange",
-      "teal",
-      "cyan",
-      "gray",
-    ];
+    const colors = ["red", "green", "purple", "blue", "pink", "twitter", "orange", "teal", "cyan", "gray"];
     return colors[idx % colors.length] + ".400";
   };
   return (
@@ -73,12 +54,7 @@ export default function Navbar() {
       }}
       zIndex={1000}
     >
-      <HStack
-        spacing={4}
-        alignItems="center"
-        justifyContent="space-between"
-        px={{ base: "1rem", md: "2rem" }}
-      >
+      <HStack spacing={4} alignItems="center" justifyContent="space-between" px={{ base: "1rem", md: "2rem" }}>
         <VStack spacing={{ base: 0, md: 6 }} alignItems="flex-start">
           <Box display={{ base: "none", md: "block" }}>
             <NextLink href="/" passHref>
@@ -112,11 +88,7 @@ export default function Navbar() {
               </NavLink>
             </Show>
             {links.map((link, index) => (
-              <NavLink
-                key={link.href}
-                href={link.href}
-                bgColor={genereateColor(index)}
-              >
+              <NavLink key={link.href} href={link.href} bgColor={genereateColor(index)}>
                 {link.label}
               </NavLink>
             ))}
@@ -138,16 +110,7 @@ export default function Navbar() {
             bg: colorMode === "light" ? "gray.100" : "gray.700",
           }}
         >
-          <NextImage
-            src={
-              colorMode === "light"
-                ? "/static/icons/half-moon.png"
-                : "/static/icons/sun.png"
-            }
-            alt="moon"
-            width={17}
-            height={17}
-          />
+          <NextImage src={colorMode === "light" ? "/static/icons/half-moon.png" : "/static/icons/sun.png"} alt="moon" width={17} height={17} />
         </Box>
       </HStack>
     </Box>

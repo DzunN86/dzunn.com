@@ -49,15 +49,6 @@ export default function Home({ posts }: any) {
             dashboard and information system.
           </Text>
         </GridItem>
-        {/* <GridItem colSpan={{ base: 12, md: 4 }}>
-          <Image
-            src="/static/ram.png"
-            alt="Dzun Nurroin"
-            width={500}
-            height={500}
-            priority
-          />
-        </GridItem> */}
       </Grid>
     </MainLayout>
   );
