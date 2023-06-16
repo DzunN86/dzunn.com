@@ -4,7 +4,8 @@ import { headingStyles } from "./components/heading";
 
 const config: ThemeConfig = {
   initialColorMode: "dark",
-  useSystemColorMode: false,
+  useSystemColorMode: true,
+  cssVarPrefix: "hifumi",
 };
 
 export default extendTheme({ config }, globalStyles, headingStyles);

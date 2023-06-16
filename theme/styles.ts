@@ -10,10 +10,10 @@ export const globalStyles = {
     global: (props: any) => ({
       body: {
         bg: mode("gray.50", "gray.900")(props),
-        fontFamily: "Inter",
+        fontFamily: "Hubot Sans",
       },
       html: {
-        fontFamily: "Inter",
+        fontFamily: "Hubot Sans",
       },
     }),
   },
