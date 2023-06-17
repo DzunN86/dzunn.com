@@ -7,9 +7,9 @@ import { getBlurDataURL } from "@/utils/blurDataURL";
 
 const links = [
   { href: "/me", label: "About" },
-  // { href: "/blog", label: "Blog" },
+  { href: "/blog", label: "Blog" },
   // { href: "/projects", label: "Projects" },
-  { href: "/resume", label: "Resume" },
+  // { href: "/resume", label: "Resume" },
   { href: "/illustration", label: "Illustration" },
 ];
 

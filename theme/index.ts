@@ -1,6 +1,5 @@
 import { ThemeConfig, extendTheme } from "@chakra-ui/react";
 import { globalStyles } from "./styles";
-import { headingStyles } from "./components/heading";
 
 const config: ThemeConfig = {
   initialColorMode: "dark",
@@ -8,4 +7,4 @@ const config: ThemeConfig = {
   cssVarPrefix: "hifumi",
 };
 
-export default extendTheme({ config }, globalStyles, headingStyles);
+export default extendTheme({ config }, globalStyles);

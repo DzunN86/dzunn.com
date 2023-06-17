@@ -11,6 +11,21 @@ export const GlobalStyle = ({ children }: { children: React.ReactNode }) => {
       <Global
         styles={css`
           ${colorMode === `light` ? prismLightTheme : prismDarkTheme};
+          ::selection {
+            background-color: #f5911f;
+            color: #fefefe;
+          }
+          ::-moz-selection {
+            background: #f5911f;
+            color: #fefefe;
+          }
+          #nprogress .bar {
+            background: #f5911f;
+            height: 3px;
+          }
+          html {
+            scroll-behavior: smooth;
+          }
           @font-face {
             font-family: "Hubot Sans";
             src: url("/fonts/Hubot-Sans.woff2") format("woff2 supports variations"), url("/fonts/Hubot-Sans.woff2") format("woff2-variations");

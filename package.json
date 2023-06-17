@@ -23,6 +23,7 @@
     "mdx-prism": "^0.3.4",
     "next": "13.3.1",
     "next-mdx-remote": "^4.4.1",
+    "nprogress": "^0.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "reading-time": "^1.5.0",
@@ -32,13 +33,14 @@
     "rehype-pretty-code": "^0.9.8",
     "rehype-prism-plus": "^1.5.1",
     "rehype-slug": "^5.1.0",
-    "remark-autolink-headings": "^7.0.1",
-    "remark-capitalize": "^1.1.0",
-    "remark-slug": "^7.0.1",
+    "remark-gfm": "^3.0.1",
     "shiki": "^0.14.2",
     "timeago.js": "^4.0.2",
     "typescript": "5.0.4",
     "unist-util-visit": "^4.1.2",
     "use-sound": "^4.0.1"
+  },
+  "devDependencies": {
+    "@types/nprogress": "^0.2.0"
   }
 }

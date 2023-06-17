@@ -1,21 +1,26 @@
+const { createOgImage } = require("@/lib/createOgImage");
+
 const siteMetadata = {
   title: "Dzun Nurroin",
   author: "Dzun Nurroin",
   headerTitle: "Dzun Nurroin",
-  description: "A blog created with Next.js and Tailwind.css",
+  description: "Software Engineer specialized in Frontend Development.",
   language: "en-us",
   theme: "system", // system, dark or light
   siteUrl: "https://www.dzunn.com",
   siteRepo: "https://github.com/DzunN86",
   siteLogo: "/static/images/logo.png",
   image: "/static/images/avatar.png",
-  socialBanner: "/static/images/twitter-card.png",
+  socialBanner: createOgImage({
+    title: "Dzun Nurroin",
+    meta: "Software Engineer specialized in Frontend Development.",
+  }),
   email: "nurroinz@gmail.com",
   github: "https://github.com/DzunN86",
   twitter: "https://twitter.com/Dzun_N",
-  facebook: "https://www.facebook.com/dzunn86/",
+  facebook: "https://www.facebook.com/dzunn86",
   youtube: "https://youtube.com",
-  linkedin: "https://www.linkedin.com",
+  linkedin: "https://www.linkedin.com/in/dzun-nn",
   locale: "en-US",
   analytics: {
     // If you want to use an analytics provider you have to add it to the
