@@ -6,7 +6,7 @@ import readingTime from "reading-time";
 import rehypeCodeTitles from "rehype-code-titles";
 import rehypePrism from "rehype-prism-plus";
 import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "remark-autolink-headings";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import remarkGfm from "remark-gfm";
 const root = process.cwd();
 
