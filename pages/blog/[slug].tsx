@@ -16,7 +16,6 @@ export default function DetailBlog({ mdxSource, frontMatter }: any) {
       "Lorem ipsum dolor sit ame, consectetur adipisicing elit. Cum mollitia veritatis ratione, voluptatibus soluta earum nulla nam ea beatae ut aspernatur magnam provident quidem placeat doloribus tempore. Quo, iste modi?",
     meta: "dzunn.com · " + dateFormatter(frontMatter.publishedAt),
   });
-  console.log(ogImage);
   return (
     <BlogLayout title={frontMatter.title} publishedAt={frontMatter.publishedAt} readingTime={frontMatter.readingTime.text}>
       <BlogSEO
