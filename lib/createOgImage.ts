@@ -4,9 +4,10 @@ const e = (str: string) => encodeURIComponent(encodeURIComponent(str));
 export const createOgImage = ({ title, meta }: { title: string; meta: string }) =>
   [
     // ACCOUNT PREFIX
-    `https://res.cloudinary.com/dsnfwadfz/image/upload`,
-    // Composed Image Transformations
-    `w_1600,h_836,q_100`,
+    `https://res.cloudinary.com/dzunn/image/upload`,
+
+    // my transformation
+    `t_og-site`,
 
     // TITLE
     // Karla google font in light rose
@@ -19,14 +20,6 @@ export const createOgImage = ({ title, meta }: { title: string; meta: string }) 
     `l_text:Karla_48:${e(meta)},co_rgb:ffe4e680,c_fit,w_1400`,
     // Positioning
     `fl_layer_apply,g_south_west,x_100,y_100`,
-
-    // PROFILE IMAGE
-    // dynamically fetched from my twitter profile
-    `l_twitter_name:Dzun_N`,
-    // Transformations
-    `c_thumb,g_face,r_max,w_380,h_380,q_100`,
-    // Positioning
-    `fl_layer_apply,w_140,g_north_west,x_100,y_100`,
 
     // BG
     `og-thumbnail.png`,
