@@ -15,7 +15,6 @@ export default function DetailBlog({ mdxSource, frontMatter }: any) {
     meta: "dzunn.com · " + dateFormatter(frontMatter.publishedAt),
   });
 
-  console.log(ogImage);
   return (
     <BlogLayout title={frontMatter.title} publishedAt={frontMatter.publishedAt} readingTime={frontMatter.readingTime.text}>
       <BlogSEO

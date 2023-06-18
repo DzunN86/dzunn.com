@@ -12,18 +12,20 @@ type Props = {
 export default function BlogLayout({ children, title, publishedAt, readingTime }: Props) {
   return (
     <MainLayout>
-      <VStack spacing={{ base: 2, md: 3 }} alignItems="stretch" mb={{ base: "2rem", md: "5rem" }}>
-        <Text as="h1" fontSize={{ base: "1.8rem", md: "4xl" }} fontWeight="bold" lineHeight="1.3">
-          {title}
-        </Text>
-        <HStack spacing={3} color="gray.500" fontSize={{ base: "sm", md: "md" }} alignItems="center">
-          <Text>{dateFormatter(publishedAt)}</Text>
-          <Text>&middot;</Text>
-          <Text>{readingTime}</Text>
-        </HStack>
-      </VStack>
       <Grid templateColumns="repeat(12, 1fr)" gap={{ base: 5, md: "2rem", lg: "4rem", xl: "6rem" }} alignItems="flex-start">
-        <GridItem colSpan={{ base: 12, lg: 8 }}>{children}</GridItem>
+        <GridItem colSpan={{ base: 12, lg: 8 }}>
+          <VStack spacing={{ base: 2, md: 3 }} alignItems="stretch" mb={{ base: "2rem", md: "4rem" }}>
+            <Text as="h1" fontSize={{ base: "1.8rem", md: "4xl" }} fontWeight="bold" lineHeight="1.3">
+              {title}
+            </Text>
+            <HStack spacing={3} color="gray.500" fontSize={{ base: "sm", md: "md" }} alignItems="center">
+              <Text>{dateFormatter(publishedAt)}</Text>
+              <Text>&middot;</Text>
+              <Text>{readingTime}</Text>
+            </HStack>
+          </VStack>
+          {children}
+        </GridItem>
         <GridItem colSpan={{ base: 12, lg: 4 }} h="full">
           <Heading as="h1" size={{ base: "xl", md: "2xl" }} position="sticky" top="1rem" mb="1rem">
             Writing
