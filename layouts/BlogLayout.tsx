@@ -12,11 +12,11 @@ type Props = {
 export default function BlogLayout({ children, title, publishedAt, readingTime }: Props) {
   return (
     <MainLayout>
-      <VStack spacing={5} alignItems="stretch" mb={{ base: "2rem", md: "5rem" }}>
-        <Text as="h1" fontSize={{ base: "3xl", md: "4xl" }} fontWeight="bold" lineHeight="1.3">
+      <VStack spacing={{ base: 2, md: 3 }} alignItems="stretch" mb={{ base: "2rem", md: "5rem" }}>
+        <Text as="h1" fontSize={{ base: "1.8rem", md: "4xl" }} fontWeight="bold" lineHeight="1.3">
           {title}
         </Text>
-        <HStack spacing={3} color="gray.500" fontSize="md" alignItems="center">
+        <HStack spacing={3} color="gray.500" fontSize={{ base: "sm", md: "md" }} alignItems="center">
           <Text>{dateFormatter(publishedAt)}</Text>
           <Text>&middot;</Text>
           <Text>{readingTime}</Text>

@@ -26,6 +26,9 @@ export const GlobalStyle = ({ children }: { children: React.ReactNode }) => {
           html {
             scroll-behavior: smooth;
           }
+          .heading-group :first-child {
+            display: none;
+          }
           @font-face {
             font-family: "Hubot Sans";
             src: url("/fonts/Hubot-Sans.woff2") format("woff2 supports variations"), url("/fonts/Hubot-Sans.woff2") format("woff2-variations");

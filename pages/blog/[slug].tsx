@@ -10,12 +10,12 @@ import { createOgImage } from "@/lib/createOgImage";
 import { dateFormatter } from "@/utils/formatter";
 
 export default function DetailBlog({ mdxSource, frontMatter }: any) {
-  console.log(frontMatter);
   const ogImage = createOgImage({
-    title:
-      "Lorem ipsum dolor sit ame, consectetur adipisicing elit. Cum mollitia veritatis ratione, voluptatibus soluta earum nulla nam ea beatae ut aspernatur magnam provident quidem placeat doloribus tempore. Quo, iste modi?",
+    title: frontMatter.title,
     meta: "dzunn.com · " + dateFormatter(frontMatter.publishedAt),
   });
+
+  console.log(ogImage);
   return (
     <BlogLayout title={frontMatter.title} publishedAt={frontMatter.publishedAt} readingTime={frontMatter.readingTime.text}>
       <BlogSEO
@@ -23,7 +23,7 @@ export default function DetailBlog({ mdxSource, frontMatter }: any) {
         date={frontMatter.publishedAt}
         summary={frontMatter.summary}
         url={`https://dzunn.com/blog/${frontMatter.slug}`}
-        images={frontMatter.images}
+        images={frontMatter.images || [ogImage]}
         canonicalUrl={`https://dzunn.com/blog/${frontMatter.slug}`}
       />
       <MDXRemote {...mdxSource} components={MDXComponents} />

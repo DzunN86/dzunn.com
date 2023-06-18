@@ -1,4 +1,4 @@
-import { Box, Alert, Code, Heading, Link, Text, Divider, useColorMode, useBreakpointValue, Table, Thead, Tbody, Tr, Td, Th, useColorModeValue } from "@chakra-ui/react";
+import { Alert, Box, Code, Divider, Heading, Link, Table, Tbody, Td, Text, Th, Thead, Tr, useBreakpointValue, useColorMode, useColorModeValue } from "@chakra-ui/react";
 import NextLink from "next/link";
 
 const CustomLink = (props: any) => {
@@ -19,7 +19,11 @@ const CustomLink = (props: any) => {
     );
   }
 
-  return <Link color={color[colorMode]} isExternal {...props} />;
+  return (
+    // <Tooltip hasArrow label={props.href} bg="gray.300" color="black" placement="top">
+    <Link color={color[colorMode]} isExternal {...props} />
+    // </Tooltip>
+  );
 };
 
 const Quote = (props: any) => {
@@ -76,7 +80,7 @@ const DocsHeading = (props: any) => {
       borderBottomColor={borderColor}
       paddingBottom="0.3rem"
     >
-      <Box pointerEvents="auto" display="flex" alignItems="center" gap={3}>
+      <Box pointerEvents="auto" display="flex" alignItems="center" gap={3} className="heading-group">
         {props.children}
         {props.id && (
           <Box

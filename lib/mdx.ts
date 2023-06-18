@@ -57,7 +57,20 @@ export async function getFilesBySlug(type: string, slug: string) {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [remarkGfm],
-      rehypePlugins: [rehypeCodeTitles, rehypePrism, rehypeSlug, rehypeAutolinkHeadings],
+      rehypePlugins: [
+        rehypeCodeTitles,
+        rehypePrism,
+        rehypeSlug,
+        [
+          rehypeAutolinkHeadings,
+          {
+            // behavior: "wrap",
+            // properties: {
+            //   className: ["menu-heading"],
+            // },
+          },
+        ],
+      ],
     },
   });
 
