@@ -14,7 +14,7 @@ export default function BlogLayout({ children, title, publishedAt, readingTime }
     <MainLayout>
       <Grid templateColumns="repeat(12, 1fr)" gap={{ base: 5, md: "2rem", lg: "4rem", xl: "6rem" }} alignItems="flex-start">
         <GridItem colSpan={{ base: 12, lg: 8 }}>
-          <VStack spacing={{ base: 2, md: 3 }} alignItems="stretch" mb={{ base: "2rem", md: "4rem" }}>
+          <VStack spacing={{ base: 2, md: 3 }} alignItems="stretch" mb={{ base: "2rem", md: "3rem" }}>
             <Text as="h1" fontSize={{ base: "1.8rem", md: "4xl" }} fontWeight="bold" lineHeight="1.3">
               {title}
             </Text>
