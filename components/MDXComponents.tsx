@@ -1,11 +1,12 @@
-import { Alert, Box, Code, Divider, Heading, Link, Table, Tbody, Td, Text, Th, Thead, Tr, useBreakpointValue, useColorMode, useColorModeValue } from "@chakra-ui/react";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
+import { Alert, Box, Code, Divider, Heading, Image, Link, Table, Tbody, Td, Text, Th, Thead, Tr, useBreakpointValue, useColorMode, useColorModeValue } from "@chakra-ui/react";
 import NextLink from "next/link";
 
 const CustomLink = (props: any) => {
   const { colorMode } = useColorMode();
   const color = {
-    light: "blue.500",
-    dark: "blue.500",
+    light: "orange.500",
+    dark: "orange.500",
   };
 
   const href = props.href;
@@ -14,14 +15,42 @@ const CustomLink = (props: any) => {
   if (isInternalLink) {
     return (
       <NextLink href={href} passHref>
-        <Link as="span" color={color[colorMode]} {...props} />
+        <Link
+          as="span"
+          color={color[colorMode]}
+          {...props}
+          _hover={{
+            backgroundColor: "orange.500",
+            color: "white",
+          }}
+          style={{
+            textDecoration: "underline",
+            textDecorationColor: "orange.500",
+          }}
+          transition="all 0.3s ease-in-out"
+        />
       </NextLink>
     );
   }
 
   return (
     // <Tooltip hasArrow label={props.href} bg="gray.300" color="black" placement="top">
-    <Link color={color[colorMode]} isExternal {...props} />
+    <Link
+      color={color[colorMode]}
+      isExternal
+      {...props}
+      _hover={{
+        backgroundColor: "orange.500",
+        color: "white",
+      }}
+      style={{
+        textDecoration: "underline",
+        textDecorationColor: "orange.500",
+      }}
+      transition="all 0.3s ease-in-out"
+    >
+      {props.children} <ExternalLinkIcon mx="2px" />
+    </Link>
     // </Tooltip>
   );
 };
@@ -29,8 +58,8 @@ const CustomLink = (props: any) => {
 const Quote = (props: any) => {
   const { colorMode } = useColorMode();
   const bgColor = {
-    light: "blue.50",
-    dark: "blue.900",
+    light: "orange.50",
+    dark: "orange.900",
   };
 
   return (
@@ -39,7 +68,7 @@ const Quote = (props: any) => {
       w="98%"
       bg={bgColor[colorMode]}
       variant="left-accent"
-      status="info"
+      status="warning"
       css={{
         "> *:first-of-type": {
           marginTop: 0,
@@ -122,12 +151,12 @@ const MDXComponents = {
   h4: (props: any) => <DocsHeading as="h4" size="sm" fontWeight="bold" {...props} />,
   h5: (props: any) => <DocsHeading as="h5" size="sm" fontWeight="bold" {...props} />,
   h6: (props: any) => <DocsHeading as="h6" size="xs" fontWeight="bold" {...props} />,
-  code: (props: any) => <Code colorScheme="green" fontSize="0.84em" {...props} />,
+  code: (props: any) => <Code colorScheme="orange" fontSize="0.84em" {...props} />,
   br: (props: any) => <Box height="24px" {...props} />,
   hr: Hr,
   // pre: (props: any) => <Box my="2em" rounded="sm" borderWidth="1px" borderColor="gray.200" {...props} />,
   a: (props: any) => <CustomLink {...props} />,
-  p: (props: any) => <Text as="p" mt={0} lineHeight="tall" {...props} />,
+  p: (props: any) => <Text as="p" mt={0} lineHeight="tall" {...props} mb="1em" />,
   ul: (props: any) => <Box as="ul" pt={2} pl={4} ml={2} {...props} />,
   ol: (props: any) => <Box as="ol" pt={2} pl={4} ml={2} {...props} />,
   li: (props: any) => (
@@ -137,7 +166,7 @@ const MDXComponents = {
       {...props}
       css={{
         "::marker": {
-          color: "#e77cc7",
+          color: "#DD6B20",
           fontSize: "1.1rem",
           lineHeight: 1,
         },
@@ -152,6 +181,7 @@ const MDXComponents = {
   tbody: (props: any) => <Tbody {...props} />,
   tr: (props: any) => <Tr {...props} />,
   td: (props: any) => <Td {...props} />,
+  img: (props: any) => <Image {...props} alt="blog image" rounded="lg" />,
 };
 
 export { CustomLink };
