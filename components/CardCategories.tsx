@@ -4,9 +4,9 @@ import Link from "next/link";
 import React from "react";
 
 export default function CardCategories({ categories }: { categories: Categories }) {
-  const hoverStyles = useColorModeValue("gray.100", "gray.700");
+  const hoverStyles = useColorModeValue("gray.100", "gray.900");
   return (
-    <Card mb="1.5rem" shadow="none" rounded="md" overflow="hidden" border="1px solid" borderColor={useColorModeValue("gray.200", "gray.700")} bg={useColorModeValue("white", "gray.800")}>
+    <Card mb="1.5rem" shadow="none" rounded="md" overflow="hidden" border="1px solid" borderColor={useColorModeValue("gray.200", "gray.800")} bg={useColorModeValue("white", "blackAlpha.900")}>
       <CardBody>
         <Heading as="h2" size="md" mb="1.5rem">
           Categories

@@ -6,7 +6,7 @@ import React from "react";
 export default function CardTags({ tags }: { tags: Tags }) {
   const router = useRouter();
   return (
-    <Card shadow="none" rounded="md" overflow="hidden" border="1px solid" borderColor={useColorModeValue("gray.200", "gray.700")} bg={useColorModeValue("white", "gray.800")}>
+    <Card shadow="none" rounded="md" overflow="hidden" border="1px solid" borderColor={useColorModeValue("gray.200", "gray.800")} bg={useColorModeValue("white", "blackAlpha.900")}>
       <CardBody>
         <Heading as="h2" size="md" mb="1.5rem">
           Tags

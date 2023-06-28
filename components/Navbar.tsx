@@ -8,7 +8,7 @@ import { getBlurDataURL } from "@/utils/blurDataURL";
 const links = [
   { href: "/me", label: "About" },
   { href: "/blog", label: "Blog" },
-  // { href: "/projects", label: "Projects" },
+  { href: "/projects", label: "Projects" },
   // { href: "/resume", label: "Resume" },
   { href: "/illustration", label: "Illustration" },
 ];
@@ -49,9 +49,10 @@ export default function Navbar() {
       }}
       top="0"
       bg={{
-        base: colorMode === "light" ? "white" : "gray.900",
+        base: colorMode === "light" ? "white" : "blackAlpha.900",
         md: "transparent",
       }}
+      backdropFilter="blur(10px)"
       zIndex={1000}
     >
       <HStack spacing={4} alignItems="center" justifyContent="space-between" px={{ base: "1rem", md: "2rem" }}>
@@ -76,7 +77,7 @@ export default function Navbar() {
           </Box>
           <HStack
             spacing={{
-              base: "1rem",
+              base: "0.8rem",
               md: "2rem",
             }}
             alignItems="flex-start"
