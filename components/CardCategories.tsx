@@ -26,10 +26,10 @@ export default function CardCategories({ categories }: { categories: Categories 
                 }}
                 role="group"
               >
-                <Text fontSize="md" fontWeight="semibold" _groupHover={{ color: "green.400" }}>
+                <Text fontSize="md" fontWeight="semibold" _groupHover={{ color: "orange.400" }}>
                   {category}
                 </Text>
-                <Text fontSize="sm" whiteSpace="nowrap" color="green.400">
+                <Text fontSize="sm" whiteSpace="nowrap" color="orange.400">
                   {categories[category].count}
                 </Text>
               </HStack>

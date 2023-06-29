@@ -34,7 +34,7 @@ export default function Blog({ posts, tags, categories }: Props) {
               <InputLeftElement pointerEvents="none">
                 <Box>🔍</Box>
               </InputLeftElement>
-              <Input type="search" focusBorderColor="green.400" placeholder="Search" onChange={(e) => setSearchValue(e.target.value)} />
+              <Input type="search" focusBorderColor="orange.400" placeholder="Search" onChange={(e) => setSearchValue(e.target.value)} />
             </InputGroup>
           </Flex>
           <VStack spacing={4} alignItems="stretch" mb="1.5rem" divider={<StackDivider borderColor={useColorModeValue("gray.200", "gray.700")} />}>

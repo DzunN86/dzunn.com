@@ -21,7 +21,7 @@ export default function BlogItem({ post }: BlogItemProps) {
           //   left: 0,
           //   width: "100%",
           //   height: "2px",
-          //   backgroundColor: "green.400",
+          //   backgroundColor: "orange.400",
           //   transform: "scaleX(0)",
           //   transformOrigin: "left",
           //   transition: "transform 0.3s ease",
@@ -32,12 +32,12 @@ export default function BlogItem({ post }: BlogItemProps) {
             // },
             textDecoration: "underline",
             textDecorationThickness: "2px",
-            textDecorationColor: "green.400",
+            textDecorationColor: "orange.400",
           }}
         >
           {post.title}
         </Heading>
-        <Text fontSize="sm" whiteSpace="nowrap" color="green.400">
+        <Text fontSize="sm" whiteSpace="nowrap" color="orange.400">
           {isMobile ? format(post.publishedAt, "en_US") : dateFormatter(post.publishedAt)}
         </Text>
       </HStack>

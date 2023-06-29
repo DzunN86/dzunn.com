@@ -5,12 +5,9 @@ import { Heading } from "@chakra-ui/react";
 export default function Illustration() {
   return (
     <MainLayout>
-      <PageSEO
-        title="Illustration | Dzun Nurroin"
-        description="Dzun Nurroin's personal website"
-      />
+      <PageSEO title="Illustration | Dzun Nurroin" description="Dzun Nurroin's personal website" />
       <Heading as="h1" size="2xl">
-        Illustration
+        This page is under construction
       </Heading>
     </MainLayout>
   );

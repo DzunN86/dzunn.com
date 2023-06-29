@@ -1,4 +1,4 @@
-import { Box, HStack, Heading, Image, Show, VStack, useColorMode } from "@chakra-ui/react";
+import { Box, HStack, Heading, Show, VStack, useColorMode } from "@chakra-ui/react";
 import NextImage from "next/image";
 import NextLink from "next/link";
 import NavLink from "./NavLink";
@@ -8,26 +8,20 @@ import { getBlurDataURL } from "@/utils/blurDataURL";
 const links = [
   { href: "/me", label: "About" },
   { href: "/blog", label: "Blog" },
-  { href: "/projects", label: "Projects" },
+  // { href: "/projects", label: "Projects" },
   // { href: "/resume", label: "Resume" },
   { href: "/illustration", label: "Illustration" },
 ];
 
 export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
-  // const [play] = useSound(
-  //   colorMode === "dark"
-  //     ? "/static/sounds/public_sounds_switch-on.mp3"
-  //     : "/static/sounds/public_sounds_switch-off.mp3"
-  // );
 
   const handleToggleColorMode = () => {
-    // play();
     toggleColorMode();
   };
 
   const genereateColor = (idx: number) => {
-    const colors = ["red", "green", "purple", "blue", "pink", "twitter", "orange", "teal", "cyan", "gray"];
+    const colors = ["blue", "orange", "purple", "red", "pink", "twitter", "green", "teal", "cyan", "gray"];
     return colors[idx % colors.length] + ".400";
   };
   return (
@@ -52,7 +46,10 @@ export default function Navbar() {
         base: colorMode === "light" ? "white" : "blackAlpha.900",
         md: "transparent",
       }}
-      backdropFilter="blur(10px)"
+      backdropFilter={{
+        base: "blur(10px)",
+        md: "none",
+      }}
       zIndex={1000}
     >
       <HStack spacing={4} alignItems="center" justifyContent="space-between" px={{ base: "1rem", md: "2rem" }}>
