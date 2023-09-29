@@ -72,7 +72,7 @@ export default function Navbar() {
               </HStack>
             </NextLink>
           </Box>
-          <HStack
+          {/* <HStack
             spacing={{
               base: "0.8rem",
               md: "2rem",
@@ -90,7 +90,7 @@ export default function Navbar() {
                 {link.label}
               </NavLink>
             ))}
-          </HStack>
+          </HStack> */}
         </VStack>
         <Box
           as="button"
