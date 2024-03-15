@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     default: "Dzun Nurroin",
     template: `%s | ${"Dzun Nurroin"}`,
   },
-}
+};
 
 export default function RootLayout({
   children,
@@ -33,6 +33,7 @@ export default function RootLayout({
       <body className={clsx("flex h-full flex-col bg-zinc-50 dark:bg-black text-zinc-900 dark:text-white", inter.className)}>
         <ThemeProviders>
           <div className="fixed inset-0 flex justify-center sm:px-8">
+            <div className="absolute inset-0 h-screen w-full -z-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:23px_23px]"></div>
             <div className="flex w-full max-w-7xl lg:px-8">
               <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20" />
             </div>
