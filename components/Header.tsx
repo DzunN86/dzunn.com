@@ -10,7 +10,7 @@ import avatarImage from "@/images/avatar.jpg";
 import { usePathname } from "next/navigation";
 import { ComponentPropsWithoutRef, Fragment, useEffect, useRef } from "react";
 import ThemeSwitch from "./ThemeSwitch";
-import BlurImage from "./BlurImage";
+import { menuSchema } from "@/constant";
 
 function CloseIcon(props: React.ComponentProps<"svg">) {
   return (
@@ -67,11 +67,11 @@ function MobileNavigation(props: ComponentPropsWithoutRef<"nav">) {
             </div>
             <nav className="mt-6">
               <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-                <MobileNavItem href="/about">About</MobileNavItem>
-                <MobileNavItem href="/articles">Articles</MobileNavItem>
-                <MobileNavItem href="/projects">Projects</MobileNavItem>
-                <MobileNavItem href="/speaking">Speaking</MobileNavItem>
-                <MobileNavItem href="/uses">Uses</MobileNavItem>
+                {menuSchema.map((item) => (
+                  <MobileNavItem key={item.href} href={item.href}>
+                    {item.title}
+                  </MobileNavItem>
+                ))}
               </ul>
             </nav>
           </Popover.Panel>
@@ -100,11 +100,11 @@ function DesktopNavigation(props: ComponentPropsWithoutRef<"nav">) {
   return (
     <nav {...props}>
       <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
-        <NavItem href="/about">About</NavItem>
-        <NavItem href="/articles">Articles</NavItem>
-        <NavItem href="/projects">Projects</NavItem>
-        <NavItem href="/speaking">Speaking</NavItem>
-        <NavItem href="/uses">Uses</NavItem>
+        {menuSchema.map((item) => (
+          <NavItem key={item.href} href={item.href}>
+            {item.title}
+          </NavItem>
+        ))}
       </ul>
     </nav>
   );
@@ -125,7 +125,7 @@ function AvatarContainer({ className, ...props }: ComponentPropsWithoutRef<"div"
 function Avatar({ large = false, className, ...props }: { large?: boolean } & ComponentPropsWithoutRef<"a">) {
   return (
     <Link href="/" aria-label="Home" className={clsx(className, "pointer-events-auto")} {...props}>
-      <BlurImage src={avatarImage} alt="Me" sizes={large ? "4rem" : "2.25rem"} className={clsx("rounded-full bg-zinc-100  dark:bg-zinc-800", large ? "h-16 w-16" : "h-9 w-9")} priority />
+      <Image src={avatarImage} alt="Me" sizes={large ? "4rem" : "2.25rem"} className={clsx("rounded-full bg-zinc-100  dark:bg-zinc-800", large ? "h-16 w-16" : "h-9 w-9")} placeholder="blur" />
     </Link>
   );
 }
@@ -207,7 +207,7 @@ export function Header() {
       let borderTransform = `translate3d(${borderX}rem, 0, 0) scale(${borderScale})`;
 
       setProperty("--avatar-border-transform", borderTransform);
-      setProperty("--avatar-border-opacity", scale === toScale ? '1' : '0');
+      setProperty("--avatar-border-opacity", scale === toScale ? "1" : "0");
     }
 
     function updateStyles() {
@@ -240,7 +240,7 @@ export function Header() {
             <div ref={avatarRef} className="order-last mt-[calc(theme(spacing.16)-theme(spacing.3))]" />
             {/* @ts-ignore */}
             <Container className="top-0 order-last -mb-3 pt-3" style={{ position: "var(--header-position)" }}>
-            {/* @ts-ignore */}
+              {/* @ts-ignore */}
               <div className="top-[var(--avatar-top,theme(spacing.3))] w-full" style={{ position: "var(--header-inner-position)" }}>
                 <div className="relative">
                   <AvatarContainer
@@ -249,7 +249,7 @@ export function Header() {
                       opacity: "var(--avatar-border-opacity, 0)",
                       transform: "var(--avatar-border-transform)",
                     }}
-                    />
+                  />
                   <Avatar large className="block h-16 w-16 origin-left" style={{ transform: "var(--avatar-image-transform)" }} />
                 </div>
               </div>
@@ -258,7 +258,7 @@ export function Header() {
         )}
         {/* @ts-ignore */}
         <div ref={headerRef} className="top-0 z-10 h-16 pt-6" style={{ position: "var(--header-position)" }}>
-        {/* @ts-ignore */}
+          {/* @ts-ignore */}
           <Container className="top-[var(--header-top,theme(spacing.6))] w-full" style={{ position: "var(--header-inner-position)" }}>
             <div className="relative flex gap-4">
               <div className="flex flex-1">
@@ -269,8 +269,8 @@ export function Header() {
                 )}
               </div>
               <div className="flex flex-1 justify-end md:justify-center">
-                {/* <MobileNavigation className="pointer-events-auto md:hidden" />
-                <DesktopNavigation className="pointer-events-auto hidden md:block" /> */}
+                <MobileNavigation className="pointer-events-auto md:hidden" />
+                <DesktopNavigation className="pointer-events-auto hidden md:block" />
               </div>
               <div className="flex justify-end md:flex-1">
                 <div className="pointer-events-auto">
