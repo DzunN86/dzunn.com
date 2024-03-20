@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import clsx from "clsx";
 import { ThemeProviders } from "./theme-providers";
+import { Footer } from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full antialiased" suppressHydrationWarning>
+    <html lang="en" className="h-full antialiased scroll-smooth" suppressHydrationWarning>
       <link rel="apple-touch-icon" sizes="76x76" href="/static/favicons/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/static/favicons/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/static/favicons/favicon-16x16.png" />
@@ -40,7 +41,8 @@ export default function RootLayout({
           </div>
           <div className="relative">
             <Header />
-            {children}
+            <main>{children}</main>
+            <Footer />
           </div>
         </ThemeProviders>
       </body>
